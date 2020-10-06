@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1ca50201-6343-4552-b127-9114543936f4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="$USER_HOME$/go/go1.15.2" />
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1iCFfZNOYlDXWYpPt1fMmnw2Lul" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Demo2.go" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunManager" selected="Go Build.go build Demo2.go">
+    <configuration name="go build Demo2.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GioPlay" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/Demo2.go" />
+      <package value="GioPlay" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build GioPlay (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GioPlay" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/Demo2.go" />
+      <package value="GioPlay" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build GioPlay" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GioPlay" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/HelloGio.go|$PROJECT_DIR$/Demo2.go" />
+      <package value="GioPlay" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build Demo2.go" />
+        <item itemvalue="Go Build.go build GioPlay (1)" />
+        <item itemvalue="Go Build.go build GioPlay" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1223" y="749" key="FileChooserDialogImpl" timestamp="1601410494851">
+      <screen x="0" y="0" width="3840" height="2124" />
+    </state>
+    <state x="1223" y="749" key="FileChooserDialogImpl/0.0.3840.2124@0.0.3840.2124" timestamp="1601410494851" />
+    <state width="2730" height="558" key="GridCell.Tab.0.bottom" timestamp="1601662230101">
+      <screen x="0" y="0" width="3840" height="2124" />
+    </state>
+    <state width="2730" height="558" key="GridCell.Tab.0.bottom/0.0.3840.2124@0.0.3840.2124" timestamp="1601662230101" />
+    <state width="2730" height="558" key="GridCell.Tab.0.center" timestamp="1601662230100">
+      <screen x="0" y="0" width="3840" height="2124" />
+    </state>
+    <state width="2730" height="558" key="GridCell.Tab.0.center/0.0.3840.2124@0.0.3840.2124" timestamp="1601662230100" />
+    <state width="2730" height="558" key="GridCell.Tab.0.left" timestamp="1601662230100">
+      <screen x="0" y="0" width="3840" height="2124" />
+    </state>
+    <state width="2730" height="558" key="GridCell.Tab.0.left/0.0.3840.2124@0.0.3840.2124" timestamp="1601662230100" />
+    <state width="2730" height="558" key="GridCell.Tab.0.right" timestamp="1601662230101">
+      <screen x="0" y="0" width="3840" height="2124" />
+    </state>
+    <state width="2730" height="558" key="GridCell.Tab.0.right/0.0.3840.2124@0.0.3840.2124" timestamp="1601662230101" />
+  </component>
+</project>
