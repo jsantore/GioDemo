@@ -15,57 +15,69 @@ import (
 	"log"
 	"os"
 )
-var sampleData = map[string]string{
-	"comp510":"Topics in Programming Languages\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nThis course investigates programming language development from designer’s, user’s and implementer’s point of view. Topics include formal syntax and semantics, language system, extensible languages and control structures. There is also a survey of intralanguage features, covering ALGOL-60, ALGOL-68, Ada, Pascal, LISP, SNOBOL-4 APL, SIMULA-67, CLU, MODULA, and others. Offered periodically.",
-	"comp520":"Operating Systems Principles\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nThis course examines design principles such as optimal scheduling; file systems, system integrity and security, as well as the mathematical analysis of selected aspects of operating system design. Topics include queuing theory, disk scheduling, storage management and the working set model. Design and implementation of an operating system nucleus is also studied. Offered periodically.",
-	"comp530":"Software Engineering\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nTopics in this course will include construction of reliable software, software tools, software testing methodologies, structured design, structured programming, software characteristics and quality and formal proofs of program correctness. Chief programmer teams and structure walk-throughs will be employed. Offered periodically.\n",
-	"comp545":"Analysis of Algorithms\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nThis course deals with techniques in the analysis of algorithms. Topics to be chosen from among the following: dynamic programming, search and traverse techniques, backtracking, numerical techniques, NP-hard and NP-complete problems, approximation algorithms and other topics in the analysis and design of algorithms. Offered fall semester.\n",
-	"comp560":"Artificial Intelligence\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nThis course is an introduction to LISP or another AI programming language. Topics are chosen from pattern recognition, theorem proving, learning, cognitive science and vision. It also presents introduction to the basic techniques of AI such as heuristic search, semantic nets, production systems, frames, planning and other AI topics. Offered periodically.\n",
-	"comp570":"Robotics\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nThis is a project-oriented course in robotics. Topics are chosen from manipulator motion and control, motion planning, legged-motion, vision, touch sensing, grasping, programming languages for robots and automated factory design. Offered periodically."}
 
-type ListElement struct{
-	Element widget.Clickable
-	Title string
-	Desc string
+var sampleData = map[string]string{
+	"comp502": "Research\n(3 credits)\nPrerequisite: Consent of the department; formal application required\nOriginal research is undertaken by the graduate student in their field. This course culminates in a capstone project. For details, consult the paragraph titled “Directed or Independent Study” in the “College of Graduate Studies” section of this catalog. Offered fall and spring semesters.",
+	"comp503": "Directed Study\n(1-3 credits)\nPrerequisite: Consent of the department; formal application required\nDirected study is designed for the graduate student who desires to study selected topics in a specific field. For details, consult the paragraph titled “Directed or Independent Study” in the “College of Graduate Studies” section of this catalog. Repeatable: may earn a maximum of six credits. Offered fall and spring semesters.",
+	"comp510": "Topics in Programming Languages\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nThis course investigates programming language development from designer’s, user’s and implementer’s point of view. Topics include formal syntax and semantics, language system, extensible languages and control structures. There is also a survey of intralanguage features, covering ALGOL-60, ALGOL-68, Ada, Pascal, LISP, SNOBOL-4 APL, SIMULA-67, CLU, MODULA, and others. Offered periodically.",
+	"comp520": "Operating Systems Principles\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nThis course examines design principles such as optimal scheduling; file systems, system integrity and security, as well as the mathematical analysis of selected aspects of operating system design. Topics include queuing theory, disk scheduling, storage management and the working set model. Design and implementation of an operating system nucleus is also studied. Offered periodically.",
+	"comp525": "Design and Construction of Compilers\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nIn this course, topics will include lexical and syntactic analysis; code generation; error detection and correction; optimization techniques; models of code generators; and incremental and interactive compiling. Students will design and implement a compiler. Offered periodically.",
+	"comp530": "Software Engineering\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nTopics in this course will include construction of reliable software, software tools, software testing methodologies, structured design, structured programming, software characteristics and quality and formal proofs of program correctness. Chief programmer teams and structure walk-throughs will be employed. Offered periodically.\n",
+	"comp540": "Automata, Computability and Formal Languages\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nTopics in this course will include finite automata and regular languages, context- free languages, Turing machines and their variants, partial recursive functions and grammars, Church’s thesis, undecidable problems, complexity of algorithms and completeness. Offered periodically.",
+	"comp545": "Analysis of Algorithms\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nThis course deals with techniques in the analysis of algorithms. Topics to be chosen from among the following: dynamic programming, search and traverse techniques, backtracking, numerical techniques, NP-hard and NP-complete problems, approximation algorithms and other topics in the analysis and design of algorithms. Offered fall semester.\n",
+	"comp560": "Artificial Intelligence\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nThis course is an introduction to LISP or another AI programming language. Topics are chosen from pattern recognition, theorem proving, learning, cognitive science and vision. It also presents introduction to the basic techniques of AI such as heuristic search, semantic nets, production systems, frames, planning and other AI topics. Offered periodically.\n",
+	"comp570": "Robotics\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nThis is a project-oriented course in robotics. Topics are chosen from manipulator motion and control, motion planning, legged-motion, vision, touch sensing, grasping, programming languages for robots and automated factory design. Offered periodically.",
+	"comp580": "Database Systems\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nIn this course, topics will include relational, hierarchical and network data models; design theory for relational databases and query optimization; classification of data models, data languages; concurrency, integrity, privacy; modeling and measurement of access strategies; and dedicated processors, information retrieval and real time applications. Offered periodically.",
+	"comp590": "Computer Architecture\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nThis course is an introduction to the internal structure of digital computers including design of gates, flip-fops, registers and memories to perform operations on numerical and other data represented in binary form; computer system analysis and design; organizational dependence on computations to be performed; and theoretical aspects of parallel and pipeline computation. Offered periodically.",
+	"comp594": "Computer Networks\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nThis course provides an introduction to fundamental concepts in computer networks, including their design and implementation. Topics include network architectures and protocols, placing emphasis on protocol used in the Internet; routing; data link layer issues; multimedia networking; network security; and network management. Offered periodically.\n",
+	"comp596": "Topics in Computer Science\n(3 credits)\nPrerequisite: Admission to the MS program in Computer Science or consent of instructor\nIn this course, topics are chosen from program verification, formal semantics, formal language theory, concurrent programming, complexity or algorithms, programming language theory, graphics and other computer science topics. Repeatable for different topics. Offered as topics arise.",
+	"comp598": " Computer Science Graduate Internship\n(3 credits)\nPrerequisite: Matriculation in the computer science master’s program; at least six credits of graduate-level course work in computer science (COMP); formal application required\nAn internship provides an opportunity to apply what has been learned in the classroom and allows the student to further professional skills. Faculty supervision allows for reflection on the internship experience and connects the applied portion of the academic study to other courses. Repeatable; may earn a maximum of six credits, however, only three credits can be used toward the degree. Graded on (P) Pass/(N) No Pass basis. Offered fall and spring semesters.\n",
 }
 
-type ClassList struct{
-	list layout.List
-	Items []ListElement
+type ListElement struct {
+	Element widget.Clickable
+	Title   string
+	Desc    string
+}
+
+type ClassList struct {
+	list     layout.List
+	Items    []ListElement
 	selected int
 }
 
 var listControl ClassList
 var appTheme *material.Theme
 
-func setupList(){
-	for key, value := range sampleData{
+func setupList() {
+	for key, value := range sampleData {
 		listControl.Items = append(listControl.Items, ListElement{Title: key, Desc: value})
 	}
+	listControl.list.Axis = layout.Vertical
 }
 
-func main(){
+func main() {
 	setupList()
 	go startApp()
 	app.Main()
 }
 
-func startApp(){
+func startApp() {
 	defer os.Exit(0) //if we leave this function then  exit with success
 	mainWindow := app.NewWindow()
 	err := mainEventLoop(mainWindow)
-	if err != nil{
+	if err != nil {
 		log.Fatal(err)
 	}
 }
 
-func mainEventLoop(mainWindow *app.Window)(err error){
+func mainEventLoop(mainWindow *app.Window) (err error) {
 	appTheme = material.NewTheme(gofont.Collection())
 
 	var operationsQ op.Ops
-	for{//for ever loop
-		event := <- mainWindow.Events() //read from the events channel, will wait till there is an event if none
-		switch eventType := event.(type){
+	for { //for ever loop
+		event := <-mainWindow.Events() //read from the events channel, will wait till there is an event if none
+		switch eventType := event.(type) {
 		case system.DestroyEvent: //so the user closed the window
 			return eventType.Err
 		case system.FrameEvent: //time to draw the window
@@ -76,21 +88,21 @@ func mainEventLoop(mainWindow *app.Window)(err error){
 	}
 }
 
-func drawGUI(gContext layout.Context, theme *material.Theme)layout.Dimensions{
-	retLayout := layout.Flex{Axis: layout.Vertical}.Layout(gContext, //now we begin building the layout tree toplevel is flex
+func drawGUI(gContext layout.Context, theme *material.Theme) layout.Dimensions {
+	retLayout := layout.Flex{Axis: layout.Horizontal}.Layout(gContext, //now we begin building the layout tree toplevel is flex
 		layout.Rigid(drawList(gContext, theme)),
-		layout.Flexed(1,drawDisplay(gContext, theme)))
+		layout.Flexed(1, drawDisplay(gContext, theme)))
 	return retLayout
 
 }
 
-func drawList(gContext layout.Context, theme *material.Theme)layout.Widget{
+func drawList(gContext layout.Context, theme *material.Theme) layout.Widget {
 	return func(gtx layout.Context) layout.Dimensions { //goland helps - will autofill function declaration
-		return listControl.list.Layout(gtx, len(listControl.Items),selectItem) //the listItem type is a function from context and int to dimensions
+		return listControl.list.Layout(gtx, len(listControl.Items), selectItem) //the listItem type is a function from context and int to dimensions
 	}
 }
 
-func selectItem(graphicsContext layout.Context, selectedItem int) layout.Dimensions{
+func selectItem(graphicsContext layout.Context, selectedItem int) layout.Dimensions {
 	userSelection := &listControl.Items[selectedItem]
 	if userSelection.Element.Clicked() {
 		listControl.selected = selectedItem
@@ -98,7 +110,7 @@ func selectItem(graphicsContext layout.Context, selectedItem int) layout.Dimensi
 	var itemHeight int
 	//the layout.Stack.Layout function takes a context followed by possibly many StackChild Structs, each of which must be created
 	//by using either layout.Explanded, or layout.Stacked. In either case the parameter is a function for context to dimensions
-	return layout.Stack{Alignment: layout.W}.Layout(graphicsContext,
+	return layout.Stack{Alignment: layout.E}.Layout(graphicsContext,
 		layout.Stacked(
 			func(gtx layout.Context) layout.Dimensions { //going with the anonymous function so we can use userSelection
 				dimensions := material.Clickable(gtx, &userSelection.Element,
@@ -108,27 +120,27 @@ func selectItem(graphicsContext layout.Context, selectedItem int) layout.Dimensi
 					})
 				itemHeight = dimensions.Size.Y
 				return dimensions
-			}),//thats the end of the first child
+			}), //thats the end of the first child
 		layout.Stacked(
 			func(gtx layout.Context) layout.Dimensions { //another one of those 'glorious anonymous functions
-				if listControl.selected != selectedItem{
+				if listControl.selected != selectedItem {
 					return layout.Dimensions{} //if not selected - don't do anything special
 				}
-				paint.ColorOp{Color: appTheme.Color.Primary}.Add(gtx.Ops)//add a paint operation
-				highlightWidth:= gtx.Px(unit.Dp(4)) //lets make it 4 device independent pixals
-				paint.PaintOp{Rect: f32.Rectangle{ //paint a rectangle using 32 bit floats
+				paint.ColorOp{Color: appTheme.Color.Primary}.Add(gtx.Ops) //add a paint operation
+				highlightWidth := gtx.Px(unit.Dp(4))                      //lets make it 4 device independent pixals
+				paint.PaintOp{Rect: f32.Rectangle{                        //paint a rectangle using 32 bit floats
 					Max: f32.Point{
 						X: float32(highlightWidth),
 						Y: float32(itemHeight),
-				}}}.Add(gtx.Ops)
+					}}}.Add(gtx.Ops)
 				return layout.Dimensions{Size: image.Point{X: highlightWidth, Y: itemHeight}}
 			},
 		),
 	)
 }
 
-func drawDisplay(gContext layout.Context, theme *material.Theme)layout.Widget{ //layout.Widget is a function from context to dimensions
-	return func (ctx layout.Context) layout.Dimensions {
+func drawDisplay(gContext layout.Context, theme *material.Theme) layout.Widget { //layout.Widget is a function from context to dimensions
+	return func(ctx layout.Context) layout.Dimensions {
 		displayText := material.Body1(theme, listControl.Items[listControl.selected].Desc)
 		return layout.Center.Layout(ctx, displayText.Layout)
 	}
