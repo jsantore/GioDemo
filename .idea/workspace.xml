@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ca50201-6343-4552-b127-9114543936f4" name="Default Changelist" comment="">
+    <list default="true" id="1ca50201-6343-4552-b127-9114543936f4" name="Default Changelist" comment="added more test data and move list to left hand side vertical">
+      <change beforePath="$PROJECT_DIR$/.idea/GioPlay.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GioPlay.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DisplayData.go" beforeDir="false" afterPath="$PROJECT_DIR$/DisplayData.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +64,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoProjectSettingsConfigurable" />
   </component>
   <component name="RunManager" selected="Go Build.go build DisplayData.go">
     <configuration name="go build Demo2.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -94,6 +116,22 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added more test data and move list to left hand side vertical" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more test data and move list to left hand side vertical" />
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
@@ -103,29 +141,37 @@
     </state>
     <state x="612" y="368" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1602096053944" />
     <state x="1223" y="749" key="FileChooserDialogImpl/0.0.3840.2124@0.0.3840.2124" timestamp="1601410494851" />
-    <state width="1586" height="136" key="GridCell.Tab.0.bottom" timestamp="1602603121671">
+    <state width="1586" height="136" key="GridCell.Tab.0.bottom" timestamp="1603132725807">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1586" height="17" key="GridCell.Tab.0.bottom/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602030434825" />
-    <state width="1586" height="136" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1602603121671" />
+    <state width="1586" height="136" key="GridCell.Tab.0.bottom/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602633127929" />
+    <state width="1586" height="136" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1603132725807" />
     <state width="2730" height="558" key="GridCell.Tab.0.bottom/0.0.3840.2124@0.0.3840.2124" timestamp="1601662230101" />
-    <state width="1586" height="136" key="GridCell.Tab.0.center" timestamp="1602603121671">
+    <state width="1586" height="136" key="GridCell.Tab.0.center" timestamp="1603132725807">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1586" height="17" key="GridCell.Tab.0.center/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602030434825" />
-    <state width="1586" height="136" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1602603121671" />
+    <state width="1586" height="136" key="GridCell.Tab.0.center/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602633127928" />
+    <state width="1586" height="136" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1603132725807" />
     <state width="2730" height="558" key="GridCell.Tab.0.center/0.0.3840.2124@0.0.3840.2124" timestamp="1601662230100" />
-    <state width="1586" height="136" key="GridCell.Tab.0.left" timestamp="1602603121671">
+    <state width="1586" height="136" key="GridCell.Tab.0.left" timestamp="1603132725807">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1586" height="17" key="GridCell.Tab.0.left/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602030434824" />
-    <state width="1586" height="136" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1602603121671" />
+    <state width="1586" height="136" key="GridCell.Tab.0.left/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602633127928" />
+    <state width="1586" height="136" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1603132725807" />
     <state width="2730" height="558" key="GridCell.Tab.0.left/0.0.3840.2124@0.0.3840.2124" timestamp="1601662230100" />
-    <state width="1586" height="136" key="GridCell.Tab.0.right" timestamp="1602603121671">
+    <state width="1586" height="136" key="GridCell.Tab.0.right" timestamp="1603132725807">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1586" height="17" key="GridCell.Tab.0.right/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602030434825" />
-    <state width="1586" height="136" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1602603121671" />
+    <state width="1586" height="136" key="GridCell.Tab.0.right/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602633127929" />
+    <state width="1586" height="136" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1603132725807" />
     <state width="2730" height="558" key="GridCell.Tab.0.right/0.0.3840.2124@0.0.3840.2124" timestamp="1601662230101" />
+    <state x="2453" y="226" key="SettingsEditor" timestamp="1602632387582">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2453" y="226" key="SettingsEditor/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602632387582" />
+    <state x="654" y="210" key="Vcs.Push.Dialog.v2" timestamp="1602604410513">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="654" y="210" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1602604410513" />
   </component>
 </project>

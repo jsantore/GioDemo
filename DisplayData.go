@@ -34,10 +34,39 @@ var sampleData = map[string]string{
 	"comp598": " Computer Science Graduate Internship\n(3 credits)\nPrerequisite: Matriculation in the computer science master’s program; at least six credits of graduate-level course work in computer science (COMP); formal application required\nAn internship provides an opportunity to apply what has been learned in the classroom and allows the student to further professional skills. Faculty supervision allows for reflection on the internship experience and connects the applied portion of the academic study to other courses. Repeatable; may earn a maximum of six credits, however, only three credits can be used toward the degree. Graded on (P) Pass/(N) No Pass basis. Offered fall and spring semesters.\n",
 }
 
+var prereqs = map[string][]string{
+	"comp502": []string{"comp340", "comp442", "comp490", "comp545"},
+	"comp503": []string{"comp442", "comp490"},
+	"comp510": {"comp340", "comp350", "comp435", "comp430", "comp490", "comp250", "comp151", "comp152", "comp442", "comp399", "I'm kinda making stuff up",
+		"math130", "comp999", "filling up the menu", "HELP there are too many prereqs", "I don't want to show too much of the song stuff",
+		"but I want you all to have a baseline", "even if you are grad student"},
+	"comp520": {"comp350", "comp250"},
+	"comp525": {"comp340", "comp350", "comp435", "comp490", "math130", "math180"},
+	"comp530": {"comp250", "comp442", "comp435", "comp490", "comp"},
+	"comp545": {"Math161", "Comp435"},
+	"comp560": {"math130", "Comp470", "math200", "comp490"},
+	"comp570": {"math130", "math120", "comp460", "comp490"},
+	"comp580": {"math130", "compXXX"},
+	"comp594": {"comp430"},
+	"comp596": {"comp490"},
+	"comp598": {"comp530"},
+}
+
+type prereqElement struct {
+	Element    widget.Clickable
+	classTitle string
+}
+
 type ListElement struct {
 	Element widget.Clickable
 	Title   string
 	Desc    string
+}
+
+type prereqList struct {
+	list        layout.List
+	Items       []prereqElement
+	selectedNum int
 }
 
 type ClassList struct {
@@ -47,6 +76,7 @@ type ClassList struct {
 }
 
 var listControl ClassList
+var secondList prereqList
 var appTheme *material.Theme
 
 func setupList() {
@@ -54,6 +84,14 @@ func setupList() {
 		listControl.Items = append(listControl.Items, ListElement{Title: key, Desc: value})
 	}
 	listControl.list.Axis = layout.Vertical
+}
+
+func populateSecondList(className string) {
+	secondList.Items = []prereqElement{}
+	for _, prereq := range prereqs[className] {
+		secondList.Items = append(secondList.Items, prereqElement{classTitle: prereq})
+	}
+	secondList.list.Axis = layout.Vertical
 }
 
 func main() {
@@ -91,7 +129,7 @@ func mainEventLoop(mainWindow *app.Window) (err error) {
 func drawGUI(gContext layout.Context, theme *material.Theme) layout.Dimensions {
 	retLayout := layout.Flex{Axis: layout.Horizontal}.Layout(gContext, //now we begin building the layout tree toplevel is flex
 		layout.Rigid(drawList(gContext, theme)),
-		layout.Flexed(1, drawDisplay(gContext, theme)))
+		layout.Flexed(1, drawSecondList(gContext, theme)))
 	return retLayout
 
 }
@@ -102,10 +140,52 @@ func drawList(gContext layout.Context, theme *material.Theme) layout.Widget {
 	}
 }
 
+func drawSecondList(gContext layout.Context, theme *material.Theme) layout.Widget {
+	return func(gtx layout.Context) layout.Dimensions {
+		return secondList.list.Layout(gtx, len(secondList.Items), subselectItem)
+	}
+}
+
+func subselectItem(graphicsContext layout.Context, selectedItem int) layout.Dimensions {
+	userSelection := &secondList.Items[selectedItem]
+	if userSelection.Element.Clicked() {
+		secondList.selectedNum = selectedItem
+	}
+	var itemHeight int
+	return layout.Stack{Alignment: layout.NW}.Layout(graphicsContext,
+		layout.Stacked(
+			func(gtx layout.Context) layout.Dimensions { //going with the anonymous function so we can use userSelection
+				dimensions := material.Clickable(gtx, &userSelection.Element,
+					func(gtx layout.Context) layout.Dimensions { //yes another!! anonymous function
+						return layout.UniformInset(unit.Sp(12)).
+							Layout(gtx, material.H6(appTheme, userSelection.classTitle).Layout)
+					})
+				itemHeight = dimensions.Size.Y
+				return dimensions
+			}), //thats the end of the first child
+		layout.Stacked(
+			func(gtx layout.Context) layout.Dimensions { //another one of those 'glorious anonymous functions
+				if secondList.selectedNum != selectedItem {
+					return layout.Dimensions{} //if not selected - don't do anything special
+				}
+				paint.ColorOp{Color: appTheme.Color.Hint}.Add(gtx.Ops) //add a paint operation
+				highlightWidth := gtx.Px(unit.Dp(4))                   //lets make it 4 device independent pixals
+				paint.PaintOp{Rect: f32.Rectangle{                     //paint a rectangle using 32 bit floats
+					Max: f32.Point{
+						X: float32(highlightWidth),
+						Y: float32(itemHeight),
+					}}}.Add(gtx.Ops)
+				return layout.Dimensions{Size: image.Point{X: highlightWidth, Y: itemHeight}}
+			},
+		),
+	)
+}
+
 func selectItem(graphicsContext layout.Context, selectedItem int) layout.Dimensions {
 	userSelection := &listControl.Items[selectedItem]
 	if userSelection.Element.Clicked() {
 		listControl.selected = selectedItem
+		populateSecondList(listControl.Items[selectedItem].Title)
 	}
 	var itemHeight int
 	//the layout.Stack.Layout function takes a context followed by possibly many StackChild Structs, each of which must be created
