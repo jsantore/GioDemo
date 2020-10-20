@@ -79,6 +79,8 @@ var listControl ClassList
 var secondList prereqList
 var appTheme *material.Theme
 
+//populate a static list at the beginning of the method
+//also adjuests the orientation of a list control as a side effect
 func setupList() {
 	for key, value := range sampleData {
 		listControl.Items = append(listControl.Items, ListElement{Title: key, Desc: value})
@@ -100,6 +102,7 @@ func main() {
 	app.Main()
 }
 
+//
 func startApp() {
 	defer os.Exit(0) //if we leave this function then  exit with success
 	mainWindow := app.NewWindow()
@@ -181,6 +184,12 @@ func subselectItem(graphicsContext layout.Context, selectedItem int) layout.Dime
 	)
 }
 
+//select item is called whenever a clickable in the list is pushed
+//it lets you respond to the event which in gio is both the actions to take
+//and then we have to re layout the UI as well which is why we need both a graphics
+//context and the selected itme number. returns a function (layout.Dimensions)
+//
+//that was just a dramatic pause up there to demo for the students.
 func selectItem(graphicsContext layout.Context, selectedItem int) layout.Dimensions {
 	userSelection := &listControl.Items[selectedItem]
 	if userSelection.Element.Clicked() {
